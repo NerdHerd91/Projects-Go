@@ -18,6 +18,11 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
+
+    // Check the precision requested is within our limits.
+    if n < 1 || n > 51 {
+        log.Fatal("An integer N must be within the range of [1, 51] inclusive.")
+    }
     pi := computePi()
 
     // Format the value of pi to the number of digits requested.
